@@ -46,6 +46,18 @@
                     reply.Attachments.Add(imageAttachment);
 
                     break;
+                case "send me a animated card":
+                reply.Text = $"Sample message with Animation Card";
+                    var animatecard = new AnimationCard
+                    {
+                        Title = "I am First Animation Cards",
+                        Text = "Try animation",
+                        Media = new List<MediaUrl> { new MediaUrl("http://bestanimations.com/Cartoons/WarnerBros/Taz/funny-taz-animated-gif-4.gif") }
+                        //Media = "http://bestanimations.com/Cartoons/WarnerBros/Taz/funny-taz-animated-gif-4.gif",
+
+                    }.ToAttachment();
+                    reply.Attachments.Add(animatecard);
+                    break;
                 default:
                     reply.Text = $"You said '{message.Text}'";
                     break;
